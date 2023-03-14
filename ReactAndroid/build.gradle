@@ -503,8 +503,7 @@ android {
                     "react_render_mounting",
                     "hermes_executor",
                     "jscexecutor",
-                    "jsinspector",
-                    "reactnative_unittest"
+                    "jsinspector"
             }
         }
         ndk {
@@ -516,6 +515,17 @@ android {
         cmake {
             version cmakeVersion
             path "src/main/jni/CMakeLists.txt"
+        }
+    }
+
+    buildTypes {
+        debug {
+            externalNativeBuild {
+                cmake {
+                    // We want to build Gtest suite only for the debug variant.
+                    targets "reactnative_unittest"
+                }
+            }
         }
     }
 
