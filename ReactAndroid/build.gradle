@@ -503,7 +503,8 @@ android {
                     "react_render_mounting",
                     "hermes_executor",
                     "jscexecutor",
-                    "jsinspector"
+                    "jsinspector",
+                    "reactnative_unittest"
             }
         }
         ndk {
